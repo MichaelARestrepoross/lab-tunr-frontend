@@ -1,0 +1,9 @@
+.song-row {
+    transition: background-color 0.3s, box-shadow 0.3s;
+  }
+  
+  .song-row:hover {
+    background-color: #f0f0f0; /* Darken the background color */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Add shadow on hover */
+  }
+  
