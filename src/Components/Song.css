@@ -3,7 +3,7 @@
   }
   
   .song-row:hover {
-    background-color: #f0f0f0; /* Darken the background color */
+    background-color: #f0f0f0;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Add shadow on hover */
   }
   
