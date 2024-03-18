@@ -9,8 +9,11 @@ import Index from "./Pages/Index";
 import New from "./Pages/New";
 import Show from "./Pages/Show";
 
+
+
 // COMPONENTS
 import NavBar from "./Components/NavBar";
+import PlaylistDetails from "./Components/PlaylistDetails";
 
 function App() {
   return (
@@ -24,6 +27,7 @@ function App() {
             <Route path="/songs/new" element={<New />} />
             <Route exact path="/songs/:id" element={<Show />} />
             <Route path="/songs/:id/edit" element={<Edit />} />
+            <Route path="/playlists/:id" element={<PlaylistDetails />} />
             <Route path="*" element={<FourOFour />} />
           </Routes>
         </main>

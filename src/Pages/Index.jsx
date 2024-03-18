@@ -1,3 +1,4 @@
+import Playlists from "../Components/Playlists";
 import Songs from "../Components/Songs";
 
 function Index() {
@@ -5,6 +6,7 @@ function Index() {
     <div className="Index">
       <h2>Index</h2>
       <Songs />
+      <Playlists />
     </div>
   );
 }

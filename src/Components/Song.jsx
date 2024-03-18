@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import "./Song.css"; // Import CSS file for styling
+import "./Song.css"; 
 
 function Song({ song }) {
   const navigate = useNavigate();
