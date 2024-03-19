@@ -29,6 +29,7 @@ function SongDetails() {
       <h3>Artist: {song.artist}</h3>
       <h3>Album: {song.album}</h3>
       <h3>Duration: {song.time}</h3>  
+      <h3>playlist: {song.playlist_id}</h3>  
       <div className="showNavigation">
         <div>
           <Link to={`/songs`}>

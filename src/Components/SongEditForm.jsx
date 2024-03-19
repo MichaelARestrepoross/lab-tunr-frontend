@@ -13,7 +13,10 @@ function SongEditForm() {
     album: "",
     time: "",
     is_favorite: false,
+    playlist_id: null,
   });
+
+  const [playlists, setPlaylists] = useState([]);
 
   const handleTextChange = (event) => {
     setSong({ ...song, [event.target.id]: event.target.value });
@@ -21,6 +24,10 @@ function SongEditForm() {
 
   const handleCheckboxChange = () => {
     setSong({ ...song, is_favorite: !song.is_favorite });
+  };
+
+  const handlePlaylistChange = (event) => {
+    setSong({ ...song, playlist_id: event.target.value });
   };
 
   // Update a song. Redirect to show view
@@ -35,6 +42,15 @@ function SongEditForm() {
       .then(() => navigate(`/songs/${id}`))
       .catch((error) => console.error("catch", error));
   };
+
+  useEffect(() => {
+    fetch(`${API}/playlists`)
+      .then((res) => res.json())
+      .then((data) => {
+        setPlaylists(data);
+      })
+      .catch((error) => console.error(error));
+  }, []);
 
   // On page load, fill in the form with the song data.
   useEffect(() => {
@@ -97,6 +113,21 @@ function SongEditForm() {
           onChange={handleCheckboxChange}
           checked={song.is_favorite}
         />
+        <br />
+        <br />
+        <label htmlFor="playlist_id">Playlist:</label>
+        <select id="playlist_id" onChange={handlePlaylistChange}>
+          {playlists.map((playlist) => (
+            <option
+              key={+playlist.id}
+              value={+playlist.id}
+              selected={+song.playlist_id === +playlist.id} 
+              // Set selected based on the current playlist ID
+            >
+              {playlist.name}
+            </option>
+          ))}
+        </select>
         <br />
         <input type="submit" />
       </form>

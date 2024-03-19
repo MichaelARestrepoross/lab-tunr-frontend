@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import "./PlaylistDetails.css";
 
@@ -37,6 +37,7 @@ function PlaylistDetails() {
   return (
     <div className='playlist-details-container'>
       <h2>{playlist.name}</h2>
+      {playlist.songs.length > 0 && (
       <ul>
         {playlist.songs.map(song => (
           <li key={song.id} className='song-item' onClick={() => handleSongClick(song.id)}>
@@ -48,6 +49,7 @@ function PlaylistDetails() {
           </li>
         ))}
       </ul>
+      )}
     </div>
   );
 }

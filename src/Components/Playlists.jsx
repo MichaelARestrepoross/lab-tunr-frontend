@@ -11,7 +11,6 @@ function Playlists() {
     fetch(`${API}/playlists`)
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         setPlaylists(data);
       })
       .catch((error) => console.error(error));
