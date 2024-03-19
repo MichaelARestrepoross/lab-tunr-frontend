@@ -13,7 +13,7 @@ function SongEditForm() {
     album: "",
     time: "",
     is_favorite: false,
-    playlist_id: null,
+    playlist_id: 0,
   });
 
   const [playlists, setPlaylists] = useState([]);
